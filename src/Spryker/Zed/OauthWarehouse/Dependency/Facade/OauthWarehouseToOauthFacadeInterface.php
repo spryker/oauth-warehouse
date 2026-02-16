@@ -19,9 +19,9 @@ interface OauthWarehouseToOauthFacadeInterface
     public function saveScope(OauthScopeTransfer $oauthScopeTransfer): OauthScopeTransfer;
 
     /**
-     * @param list<string> $userScopes
+     * @param array<string> $userScopes
      *
-     * @return list<\Generated\Shared\Transfer\OauthScopeTransfer>
+     * @return array<\Generated\Shared\Transfer\OauthScopeTransfer>
      */
     public function getScopesByIdentifiers(array $userScopes): array;
 }

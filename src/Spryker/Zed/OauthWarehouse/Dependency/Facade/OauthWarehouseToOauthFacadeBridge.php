@@ -35,9 +35,9 @@ class OauthWarehouseToOauthFacadeBridge implements OauthWarehouseToOauthFacadeIn
     }
 
     /**
-     * @param list<string> $userScopes
+     * @param array<string> $userScopes
      *
-     * @return list<\Generated\Shared\Transfer\OauthScopeTransfer>
+     * @return array<\Generated\Shared\Transfer\OauthScopeTransfer>
      */
     public function getScopesByIdentifiers(array $userScopes): array
     {
