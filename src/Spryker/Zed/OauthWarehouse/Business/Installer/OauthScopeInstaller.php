@@ -26,10 +26,6 @@ class OauthScopeInstaller implements OauthScopeInstallerInterface
      */
     protected OauthWarehouseToOauthFacadeInterface $oauthFacade;
 
-    /**
-     * @param \Spryker\Zed\OauthWarehouse\Dependency\Facade\OauthWarehouseToOauthFacadeInterface $oauthFacade
-     * @param \Spryker\Zed\OauthWarehouse\OauthWarehouseConfig $oauthWarehouseConfig
-     */
     public function __construct(
         OauthWarehouseToOauthFacadeInterface $oauthFacade,
         OauthWarehouseConfig $oauthWarehouseConfig
@@ -38,9 +34,6 @@ class OauthScopeInstaller implements OauthScopeInstallerInterface
         $this->oauthWarehouseConfig = $oauthWarehouseConfig;
     }
 
-    /**
-     * @return void
-     */
     public function install(): void
     {
         $warehouseScopes = $this->oauthWarehouseConfig->getWarehouseScopes();

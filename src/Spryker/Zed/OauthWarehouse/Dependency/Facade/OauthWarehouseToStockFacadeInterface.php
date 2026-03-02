@@ -12,10 +12,5 @@ use Generated\Shared\Transfer\StockCriteriaFilterTransfer;
 
 interface OauthWarehouseToStockFacadeInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\StockCriteriaFilterTransfer $stockCriteriaFilterTransfer
-     *
-     * @return \Generated\Shared\Transfer\StockCollectionTransfer
-     */
     public function getStocksByStockCriteriaFilter(StockCriteriaFilterTransfer $stockCriteriaFilterTransfer): StockCollectionTransfer;
 }

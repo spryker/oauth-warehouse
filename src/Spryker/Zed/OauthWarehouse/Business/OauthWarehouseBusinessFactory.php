@@ -28,17 +28,11 @@ use Spryker\Zed\OauthWarehouse\OauthWarehouseDependencyProvider;
  */
 class OauthWarehouseBusinessFactory extends AbstractBusinessFactory
 {
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Dependency\Facade\OauthWarehouseToOauthFacadeInterface
-     */
     public function getOauthFacade(): OauthWarehouseToOauthFacadeInterface
     {
         return $this->getProvidedDependency(OauthWarehouseDependencyProvider::FACADE_OAUTH);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Business\Provider\ScopeProviderInterface
-     */
     public function createScopeProvider(): ScopeProviderInterface
     {
         return new ScopeProvider(
@@ -46,9 +40,6 @@ class OauthWarehouseBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Business\Installer\OauthScopeInstallerInterface
-     */
     public function createOauthScopeInstaller(): OauthScopeInstallerInterface
     {
         return new OauthScopeInstaller(
@@ -57,9 +48,6 @@ class OauthWarehouseBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Business\Checker\WarehouseTokenAuthorizationCheckerInterface
-     */
     public function createWarehouseTokenAuthorizationChecker(): WarehouseTokenAuthorizationCheckerInterface
     {
         return new WarehouseTokenAuthorizationChecker(
@@ -68,9 +56,6 @@ class OauthWarehouseBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Business\Provider\WarehouseUserProviderInterface
-     */
     public function createWarehouseUserProvider(): WarehouseUserProviderInterface
     {
         return new WarehouseUserProvider(
@@ -79,25 +64,16 @@ class OauthWarehouseBusinessFactory extends AbstractBusinessFactory
         );
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Business\Reader\StockReaderInterface
-     */
     public function createStockReader(): StockReaderInterface
     {
         return new StockReader($this->getStockFacade());
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Dependency\Facade\OauthWarehouseToStockFacadeInterface
-     */
     public function getStockFacade(): OauthWarehouseToStockFacadeInterface
     {
         return $this->getProvidedDependency(OauthWarehouseDependencyProvider::FACADE_STOCK);
     }
 
-    /**
-     * @return \Spryker\Zed\OauthWarehouse\Dependency\Service\OauthWarehouseToUtilEncodingServiceInterface
-     */
     public function getUtilEncodingService(): OauthWarehouseToUtilEncodingServiceInterface
     {
         return $this->getProvidedDependency(OauthWarehouseDependencyProvider::SERVICE_UTIL_ENCODING);

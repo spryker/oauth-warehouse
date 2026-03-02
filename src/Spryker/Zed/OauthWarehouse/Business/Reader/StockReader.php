@@ -17,19 +17,11 @@ class StockReader implements StockReaderInterface
      */
     protected OauthWarehouseToStockFacadeInterface $stockFacade;
 
-    /**
-     * @param \Spryker\Zed\OauthWarehouse\Dependency\Facade\OauthWarehouseToStockFacadeInterface $stockFacade
-     */
     public function __construct(OauthWarehouseToStockFacadeInterface $stockFacade)
     {
         $this->stockFacade = $stockFacade;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\StockCriteriaFilterTransfer $stockCriteriaFilterTransfer
-     *
-     * @return bool
-     */
     public function hasStock(StockCriteriaFilterTransfer $stockCriteriaFilterTransfer): bool
     {
         $stockCollectionTransfer = $this->stockFacade->getStocksByStockCriteriaFilter($stockCriteriaFilterTransfer);

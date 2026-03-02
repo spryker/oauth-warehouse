@@ -35,21 +35,12 @@ class WarehouseTokenAuthorizationChecker implements WarehouseTokenAuthorizationC
      */
     protected OauthWarehouseConfig $oauthWarehouseConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthWarehouse\Business\Reader\StockReaderInterface $stockReader
-     * @param \Spryker\Zed\OauthWarehouse\OauthWarehouseConfig $oauthWarehouseConfig
-     */
     public function __construct(StockReaderInterface $stockReader, OauthWarehouseConfig $oauthWarehouseConfig)
     {
         $this->stockReader = $stockReader;
         $this->oauthWarehouseConfig = $oauthWarehouseConfig;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AuthorizationRequestTransfer $authorizationRequestTransfer
-     *
-     * @return bool
-     */
     public function authorize(AuthorizationRequestTransfer $authorizationRequestTransfer): bool
     {
         if ($this->isUserRequest($authorizationRequestTransfer)) {
@@ -66,11 +57,6 @@ class WarehouseTokenAuthorizationChecker implements WarehouseTokenAuthorizationC
         );
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AuthorizationRequestTransfer $authorizationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isUserRequest(AuthorizationRequestTransfer $authorizationRequestTransfer): bool
     {
         $glueRequestUserTransfer = $authorizationRequestTransfer->getEntityOrFail()->getData()[static::GLUE_REQUEST_USER] ?? null;
@@ -78,11 +64,6 @@ class WarehouseTokenAuthorizationChecker implements WarehouseTokenAuthorizationC
         return (bool)$glueRequestUserTransfer;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AuthorizationRequestTransfer $authorizationRequestTransfer
-     *
-     * @return bool
-     */
     protected function isAllowedUserScope(AuthorizationRequestTransfer $authorizationRequestTransfer): bool
     {
         $allowedUserScopes = $this->oauthWarehouseConfig->getAllowedUserScopes();
@@ -100,11 +81,6 @@ class WarehouseTokenAuthorizationChecker implements WarehouseTokenAuthorizationC
         return false;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\AuthorizationRequestTransfer $authorizationRequestTransfer
-     *
-     * @return \Generated\Shared\Transfer\GlueRequestWarehouseTransfer|null
-     */
     protected function findWarehouseRequest(AuthorizationRequestTransfer $authorizationRequestTransfer): ?GlueRequestWarehouseTransfer
     {
         /** @var \Generated\Shared\Transfer\GlueRequestWarehouseTransfer|null $glueRequestWarehouseTransfer */

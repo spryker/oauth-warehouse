@@ -25,10 +25,6 @@ class WarehouseUserProvider implements WarehouseUserProviderInterface
      */
     protected OauthWarehouseToUtilEncodingServiceInterface $utilEncodingService;
 
-    /**
-     * @param \Spryker\Zed\OauthWarehouse\Business\Reader\StockReaderInterface $stockReader
-     * @param \Spryker\Zed\OauthWarehouse\Dependency\Service\OauthWarehouseToUtilEncodingServiceInterface $utilEncodingService
-     */
     public function __construct(
         StockReaderInterface $stockReader,
         OauthWarehouseToUtilEncodingServiceInterface $utilEncodingService
@@ -37,11 +33,6 @@ class WarehouseUserProvider implements WarehouseUserProviderInterface
         $this->utilEncodingService = $utilEncodingService;
     }
 
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getOauthWarehouseUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer
     {
         $oauthUserTransfer->setIsSuccess(false);

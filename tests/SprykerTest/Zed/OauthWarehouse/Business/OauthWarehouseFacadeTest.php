@@ -75,9 +75,6 @@ class OauthWarehouseFacadeTest extends Unit
      */
     protected OauthWarehouseBusinessTester $tester;
 
-    /**
-     * @return void
-     */
     public function testInstallWarehouseOauthDataShouldInstallWarehouseScopes(): void
     {
         // Arrange
@@ -96,9 +93,6 @@ class OauthWarehouseFacadeTest extends Unit
         $this->tester->getFacade()->installWarehouseOauthData();
     }
 
-    /**
-     * @return void
-     */
     public function testGetScopesShouldReturnWarehouseScopes(): void
     {
         // Arrange
@@ -115,9 +109,6 @@ class OauthWarehouseFacadeTest extends Unit
         }
     }
 
-    /**
-     * @return void
-     */
     public function testGetOauthWarehouseUserShouldReturnSuccessWhenWarehouseIsFound(): void
     {
         // Arrange
@@ -136,9 +127,6 @@ class OauthWarehouseFacadeTest extends Unit
         $this->assertTrue($oauthUserTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testGetOauthWarehouseUserShouldReturnNotSuccessWhenWarehouseIsNotFound(): void
     {
         // Arrange
@@ -157,9 +145,6 @@ class OauthWarehouseFacadeTest extends Unit
         $this->assertFalse($oauthUserTransfer->getIsSuccess());
     }
 
-    /**
-     * @return void
-     */
     public function testGetOauthWarehouseUserShouldReturnNotSuccessWhenIdWarehouseIsNotProvided(): void
     {
         // Arrange

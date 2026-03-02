@@ -18,9 +18,6 @@ class ScopeProvider implements ScopeProviderInterface
      */
     protected OauthWarehouseConfig $oauthWarehouseConfig;
 
-    /**
-     * @param \Spryker\Zed\OauthWarehouse\OauthWarehouseConfig $oauthWarehouseConfig
-     */
     public function __construct(OauthWarehouseConfig $oauthWarehouseConfig)
     {
         $this->oauthWarehouseConfig = $oauthWarehouseConfig;

@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\StockCriteriaFilterTransfer;
 
 interface StockReaderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\StockCriteriaFilterTransfer $stockCriteriaFilterTransfer
-     *
-     * @return bool
-     */
     public function hasStock(StockCriteriaFilterTransfer $stockCriteriaFilterTransfer): bool;
 }

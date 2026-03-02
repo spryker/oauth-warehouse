@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\OauthUserTransfer;
 
 interface WarehouseUserProviderInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\OauthUserTransfer $oauthUserTransfer
-     *
-     * @return \Generated\Shared\Transfer\OauthUserTransfer
-     */
     public function getOauthWarehouseUser(OauthUserTransfer $oauthUserTransfer): OauthUserTransfer;
 }

@@ -11,10 +11,5 @@ use Generated\Shared\Transfer\AuthorizationRequestTransfer;
 
 interface WarehouseTokenAuthorizationCheckerInterface
 {
-    /**
-     * @param \Generated\Shared\Transfer\AuthorizationRequestTransfer $authorizationRequestTransfer
-     *
-     * @return bool
-     */
     public function authorize(AuthorizationRequestTransfer $authorizationRequestTransfer): bool;
 }

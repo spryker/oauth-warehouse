@@ -35,13 +35,6 @@ class WarehouseTokenGrantType extends AbstractGrant implements GrantTypeInterfac
      */
     protected $userRepository;
 
-    /**
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     * @param \League\OAuth2\Server\ResponseTypes\ResponseTypeInterface $responseType
-     * @param \DateInterval $accessTokenTTL
-     *
-     * @return \League\OAuth2\Server\ResponseTypes\ResponseTypeInterface
-     */
     public function respondToAccessTokenRequest(
         ServerRequestInterface $request,
         ResponseTypeInterface $responseType,
@@ -100,28 +93,16 @@ class WarehouseTokenGrantType extends AbstractGrant implements GrantTypeInterfac
         return $userEntity;
     }
 
-    /**
-     * @return string
-     */
     public function getIdentifier(): string
     {
         return OauthWarehouseConfig::WAREHOUSE_GRANT_TYPE;
     }
 
-    /**
-     * @param string $requestEvent
-     * @param \Psr\Http\Message\ServerRequestInterface $request
-     *
-     * @return \League\OAuth2\Server\RequestEvent
-     */
     protected function createRequestEvent(string $requestEvent, ServerRequestInterface $request): RequestEvent
     {
         return new RequestEvent($requestEvent, $request);
     }
 
-    /**
-     * @return \DateInterval
-     */
     protected function getAccessTokenTTL(): DateInterval
     {
         return new DateInterval(OauthWarehouseConfig::WAREHOUSE_TOKEN_TTL);
