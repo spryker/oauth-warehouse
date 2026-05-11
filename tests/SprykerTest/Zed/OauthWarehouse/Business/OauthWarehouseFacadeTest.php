@@ -274,7 +274,7 @@ class OauthWarehouseFacadeTest extends Unit
                 [
                     static::GLUE_REQUEST_USER => (new GlueRequestUserTransfer())->addScope(static::SCOPE_WAREHOUSE_USER),
                 ],
-                true,
+                false,
             ],
         ];
     }
